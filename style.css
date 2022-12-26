@@ -1,0 +1,386 @@
+body{
+    margin:0;
+    padding:0;
+    background-color:white;
+    color:black;
+    font-family: "M PLUS 1p", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    min-width:1366px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+.container{
+  width: 1170px;
+  margin: 0 auto;
+  padding-right: 98px;
+  padding-left: 98px;
+}
+
+.card{
+  margin-top: 98px;
+  margin-bottom: 98px;
+}
+
+.wrapper{/*Все содержимое кроме описания делится на две колонки*/
+  display: flex;
+}
+
+/*Блок с фото, расположение*/
+.card-img-block{
+  display: flex;
+  flex-direction: row-reverse;
+  width: 700px;
+}
+
+
+.img-carousel__item-active{
+  margin-left: 30px;
+}
+
+
+.img-carousel__item{
+  padding-bottom: 10px;
+}
+
+
+/* Блок с информацией */
+.card-info-block{
+  width: 400px;
+  margin-left: 70px;
+}
+/* Цвет */
+
+.color-chooser-item{
+  -webkit-appearance: none;
+  position: relative;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  background-color: inherit;
+  cursor: pointer;
+  margin-right:15px;/*Расстояние между кнопками*/
+  margin-bottom:10px;
+}
+
+
+.color-chooser-item::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  box-sizing: border-box;
+  width: calc(30px + 5px * 2); /* вычисляем: размер элемента и два раза по отступу 5 пикселей */
+  height: calc(30px + 5px * 2);
+  background-color: inherit; /* унаследовать фон у элемента */
+}
+
+
+.color-chooser-item::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  box-sizing: border-box;
+  width: calc(30px + 5px * 2);
+  height: calc(30px + 5px * 2);
+  border: 5px solid #ffffff;
+}
+
+
+.color-chooser-item:checked::after {
+  top: -4px;
+  left: -4px;
+  width: calc(30px + 4px * 2); /* вычисление: на 1 пиксель меньше, чтобы осталась рамка */
+  height: calc(30px + 4px * 2);
+  border: 4px solid #ffffff;
+}
+
+.card-color{
+  border-bottom:1px solid rgba(0, 21, 36,0.1);
+}
+
+
+/*Объем памяти*/
+.card-storage{
+  border-bottom:1px solid rgba(0, 21, 36,0.1);
+}
+
+.card-storage-button{
+  display:inline-block;
+  margin-right:10px;
+  margin-bottom:20px;
+}
+
+
+.card-storage-button input{
+  display:none;
+}
+
+.card-storage-button label{
+  display:inline-block;
+  cursor:pointer;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:4px;
+  padding-bottom:4px;
+  font-size: 14px;
+  line-height: 21px;
+  border: 1px solid rgba(0, 21, 36, 0.1);
+  border-radius: 4px;
+  color:#001524;
+}
+
+
+.card-storage-button input:checked ~ label{
+  border: 1px solid rgba(0, 21, 36, 1);
+}
+
+/*Характеристики*/
+.data-row{
+  display:flex;
+  box-sizing:border-box;
+  justify-content: space-between;
+  padding-bottom:7px;
+}
+
+
+/*Кнопки*/
+.card-buttons{
+  display:flex;
+  flex-direction: column;
+  margin-top:-10px;
+}
+
+
+/*Цена+стоимость*/
+.card-price{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Характеристики + все характеристики */
+.card-features-titles{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.card-features{
+  border-bottom:1px solid rgba(0, 21, 36,0.1);
+}
+
+
+/* Есть в наличии+рейтинг+отзывы */
+.card-rate-reviews{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.star-rate{
+  margin-bottom:-5px;
+}
+
+
+h1{
+  font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+color: #001524;
+margin-top:0;
+}
+
+
+h2{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #001524;
+}
+
+h3, .reviews{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #001524;
+}
+
+.in-stock, dt{
+  font-size: 14px;
+  line-height: 21px;
+  color: #001524;
+}
+
+.in-stock::before{
+  content:url("img/ok\ arrow.svg");
+  padding-right:10px;
+}
+
+
+/* Отзывы */
+.reviews{
+  text-decoration:none;
+}
+
+.reviews:hover{
+  color: #DE012C;
+}
+.reviews:visited{
+  color: #99A1A7;
+} 
+
+.reviews:focus{
+  color: #C20127;
+}
+
+
+/*Характеристики*/
+dt{
+  color: #797D80;
+}
+
+dd{
+  color: #001524;
+}
+
+
+/*Стоимость*/
+.card-price-item{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #1C1919;
+}
+
+
+/* Добавить в корзину */
+.buy-button{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #FFFFFF;
+  background: #DE012C;
+  border-radius: 4px;
+  padding:15px 130px;
+  border:1px solid #DE012C;
+  margin-bottom:20px;
+}
+
+.buy-button:hover{
+  background: #C20127;
+  border:1px solid #C20127;
+  transition:all 0.2s ease-in-out 0s;
+}
+
+.buy-button:focus{
+  background: #DE012C;
+  border: 1px solid #001524;
+  transition:all 0.2s ease-in-out 0s;
+}
+
+.buy-button:disabled{
+  background: #E6E3E4;
+  border:#E6E3E4 1px solid;
+  color: #B3B1B2;
+  transition:all 0.2s ease-in-out 0s;
+}
+
+
+/* Рассрочка */
+span{
+  color:rgba(222, 1, 44, 1)
+}
+
+.installment-button{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #1C1919;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid #DE012C;
+  border-radius: 4px;
+  padding:15px 93px;
+}
+
+.installment-button:hover{
+  background-color:rgba(0, 21, 36, 1);
+  color:white;
+  border:1px solid rgba(0, 21, 36, 1);
+  transition:all 0.2s ease-in-out 0s;
+}
+
+.installment-button:focus{
+  color:black;
+  border:2px solid black;
+  background: rgba(255, 255, 255, 1);
+  line-height:18px;
+  transition:all 0.2s ease-in-out 0s;
+}
+
+.installment-button:disabled{
+  border: 1px solid #CCCACB;
+  color: #BFBCBD;
+  transition:all 0.2s ease-in-out 0s;
+}
+
+
+/*Вкладки*/
+.tabs-list{
+  display:flex;
+}
+
+.tabs-list-item{
+  padding-right:45px;
+}
+
+.tabs-list-item a{
+  text-decoration:none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #797D80;
+}
+
+.tabs-list-item a:focus{
+  border-bottom:3px solid rgba(0, 21, 36,1);
+  padding-bottom:18px;
+  color:black;
+}
+
+.card-tabs{
+  border-bottom:1px solid rgba(0, 21, 36,0.1);
+  height:45px;
+  margin-top:50px;
+}
+
+.card-text{
+  font-size: 16px;
+  line-height: 150%;
+  color: #001524;
+  text-align:left;
+  margin-top:30px;
+  width:900px;
+}
